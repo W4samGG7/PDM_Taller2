@@ -24,11 +24,11 @@ import com.pdm0126.foodspot.model.Restaurant
 
 @Composable
 fun RestaurantCard(
-    restaurant: Restaurant
+    restaurant: Restaurant,
+    onClick:() -> Unit
 ){
     Card(
-        modifier = Modifier.width(120.dp).height(160.dp).clickable(onClick = {
-        }),
+        modifier = Modifier.width(120.dp).height(160.dp).clickable{onClick()},
 
     ) {
         Column(
@@ -76,5 +76,5 @@ fun RestaurantCardPreview(){
             )
         )
     )
-    RestaurantCard(restauranteDePrueba)
+    RestaurantCard(restauranteDePrueba,{})
 }

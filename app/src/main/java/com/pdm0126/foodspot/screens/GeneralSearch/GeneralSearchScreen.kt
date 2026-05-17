@@ -35,6 +35,7 @@ import com.pdm0126.foodspot.components.RestaurantCard
 fun GeneralSearchScreen(
     modifier: Modifier = Modifier,
     navigateToRestaurantList: () -> Unit,
+    navigateToDetail:(Int) -> Unit,
     viewModel: GeneralSearchViewModel = viewModel()
 ) {
     val searchValue by viewModel.searchValue.collectAsState()
@@ -90,7 +91,8 @@ fun GeneralSearchScreen(
             ) {
                 items(restaurantsSearched) { restaurantFounded ->
                     RestaurantCard(
-                        restaurant = restaurantFounded
+                        restaurant = restaurantFounded,
+                        onClick = {navigateToDetail(restaurantFounded.id)}
                     )
                 }
             }

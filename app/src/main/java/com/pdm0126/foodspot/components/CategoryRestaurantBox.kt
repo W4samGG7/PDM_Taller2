@@ -19,7 +19,8 @@ import com.pdm0126.foodspot.model.Dish
 @Composable
 fun CategoryRestaurantBox(
     category: String,
-    filteredRestaurants: List<Restaurant>
+    filteredRestaurants: List<Restaurant>,
+    navigateToDetail:(Int) -> Unit
 ){
     Column(
         modifier = Modifier.height(170.dp).fillMaxWidth(),
@@ -33,7 +34,7 @@ fun CategoryRestaurantBox(
             horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             items(filteredRestaurants){restaurant ->
-                RestaurantCard(restaurant = restaurant)
+                RestaurantCard(restaurant = restaurant, onClick = {navigateToDetail(restaurant.id)})
             }
         }
     }
@@ -108,6 +109,6 @@ fun CategoryRestaurantBoxPreview(){
         )
     ),
     )
-    CategoryRestaurantBox("Italiana", filterRestaurant)
+    CategoryRestaurantBox("Italiana", filterRestaurant, {5})
 
 }

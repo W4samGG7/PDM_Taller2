@@ -6,6 +6,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.pdm0126.foodspot.screens.GeneralSearch.GeneralSearchScreen
+import com.pdm0126.foodspot.screens.RestaurantDetail.RestaurantDetailScreen
 import com.pdm0126.foodspot.screens.RestaurantList.RestaurantListScreen
 
 @Composable
@@ -20,6 +21,9 @@ fun FoodSpotApp(modifier: Modifier = Modifier){
                 RestaurantListScreen(modifier,
                     navigateToSearch = {
                         backStack.add(Routes.GeneralSearch)
+                    },
+                    navigateToDetail = { restaurantId ->
+                        backStack.add(Routes.RestaurantDetail(restaurantId))
                     }
                 )
             }
@@ -27,7 +31,19 @@ fun FoodSpotApp(modifier: Modifier = Modifier){
                 GeneralSearchScreen(modifier,
                     navigateToRestaurantList = {
                         backStack.removeLastOrNull()
+                    },
+                    navigateToDetail = { restaurantId ->
+                        backStack.add(Routes.RestaurantDetail(restaurantId))
                     })
+            }
+            entry<Routes.RestaurantDetail>{ key ->
+                RestaurantDetailScreen(
+                    modifier = modifier,
+                    restaurantId = key.restaurantId,
+                    navigateToRestaurantList = {
+                        backStack.removeLastOrNull()
+                    }
+                )
             }
         }
     )

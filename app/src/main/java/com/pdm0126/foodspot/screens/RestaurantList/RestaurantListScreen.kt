@@ -18,7 +18,7 @@ import com.pdm0126.foodspot.components.TopBar
 
 @Composable
 fun RestaurantListScreen(modifier: Modifier = Modifier, navigateToSearch:() -> Unit,
-                         viewModel: RestaurantListViewModel = viewModel()
+                         navigateToDetail:(Int) -> Unit, viewModel: RestaurantListViewModel = viewModel()
 ){
     val categories by viewModel.categories.collectAsState()
     val restaurantsByCategory by viewModel.restaurantsByCategory.collectAsState()
@@ -36,7 +36,10 @@ fun RestaurantListScreen(modifier: Modifier = Modifier, navigateToSearch:() -> U
             items(categories) { category ->
                 CategoryRestaurantBox(
                     category = category,
-                    filteredRestaurants = restaurantsByCategory[category] ?: emptyList()
+                    filteredRestaurants = restaurantsByCategory[category] ?: emptyList(),
+                    navigateToDetail = {restauntId ->
+                        navigateToDetail(restauntId)
+                    }
                 )
             }
         }

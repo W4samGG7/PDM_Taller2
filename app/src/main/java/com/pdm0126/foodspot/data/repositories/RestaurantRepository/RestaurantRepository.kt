@@ -7,4 +7,6 @@ interface RestaurantRepository {
     suspend fun getRestaurant(): List<Restaurant>
 
     suspend fun getCategories(): List<String>
+
+    suspend fun  getRestaurantByCategory(category: String): List<Restaurant>
 }

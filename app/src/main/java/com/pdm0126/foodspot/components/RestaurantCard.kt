@@ -18,7 +18,7 @@ import com.pdm0126.foodspot.model.Restaurant
 
 @Composable
 fun RestaurantCard(
-    restaurante: Restaurant
+    restaurant: Restaurant
 ){
     Card(
         modifier = Modifier.clickable(onClick = {
@@ -32,11 +32,11 @@ fun RestaurantCard(
             AsyncImage(
                 modifier = Modifier.size(75.dp).padding(5.dp),
                 alignment = Alignment.Center,
-                model = restaurante.imageUrl,
+                model = restaurant.imageUrl,
                 contentDescription = "Imagen del restaurante mostrado"
             )
             Text(
-                text = restaurante.name
+                text = restaurant.name
             )
         }
     }

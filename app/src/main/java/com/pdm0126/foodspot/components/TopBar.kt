@@ -57,6 +57,6 @@ fun TopBar(
 
 @Preview(showBackground = true)
 @Composable
-fun TopBarPreview(){
+fun TopBarPreview1(){
     TopBar("FoodSpot", true, {})
 }

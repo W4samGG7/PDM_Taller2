@@ -27,7 +27,7 @@ fun RestaurantListScreen(modifier: Modifier = Modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        TopBar(title = "FoodSpot", showSearch = true, onSearch = {})
+        TopBar(title = "FoodSpot", showSearch = true, onSearch = {}, showBack = false, onBack = {})
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(15.dp),

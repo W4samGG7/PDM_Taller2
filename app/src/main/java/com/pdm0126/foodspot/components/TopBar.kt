@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 
@@ -18,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,25 +32,45 @@ import com.pdm0126.foodspot.R
 fun TopBar(
     title: String,
     showSearch: Boolean,
-    onSearch: () -> Unit
-){
+    onSearch: () -> Unit,
+    showBack: Boolean,
+    onBack: () -> Unit
+) {
     Row(
-        modifier = Modifier.fillMaxWidth().height(50.dp).border(width = 3.dp, color = Color.Black, shape = RectangleShape).padding(horizontal = 20.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(50.dp)
+            .border(width = 3.dp, color = Color.Black, shape = RectangleShape)
+            .padding(horizontal = 20.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(
-            text = title,
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Bold
-        )
+        Row(
+        horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            if (showBack) {
+                Icon(
+                    imageVector = Icons.Default.ArrowBackIosNew,
+                    contentDescription = "Boton de volver",
+                    modifier = Modifier.size(35.dp).clickable(onClick = {onBack})
+                )
+            }
+            Text(
+                text = title,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
 
-        if(showSearch){
+        if (showSearch) {
             Icon(
                 imageVector = Icons.Default.Search,
                 contentDescription = "Boton de busqueda",
                 tint = colorResource(R.color.purple_search),
-                modifier = Modifier.size(35.dp).clickable(onClick = {onSearch})
+                modifier = Modifier
+                    .size(35.dp)
+                    .clickable(onClick = { onSearch })
 
             )
         }
@@ -57,6 +79,6 @@ fun TopBar(
 
 @Preview(showBackground = true)
 @Composable
-fun TopBarPreview1(){
-    TopBar("FoodSpot", true, {})
+fun TopBarPreview1() {
+    TopBar("FoodSpot", false, {},true,{})
 }

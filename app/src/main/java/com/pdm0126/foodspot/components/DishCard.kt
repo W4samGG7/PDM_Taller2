@@ -1,8 +1,11 @@
 package com.pdm0126.foodspot.components
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -32,27 +35,28 @@ fun DishCard(
     onAdd:() -> Unit
 ){
     Card(
-        modifier = Modifier.fillMaxWidth().height(140.dp),
+        modifier = Modifier.fillMaxWidth().height(150.dp),
         shape = RoundedCornerShape(12.dp)
     ) {
-        Row(modifier = Modifier.fillMaxWidth().padding(12.dp)) {
+        Row(modifier = Modifier.fillMaxSize().padding(12.dp)) {
             AsyncImage(
                 model = dish.imageUrl,
                 contentDescription = "Imagen del restaurante mostrado",
-                modifier = Modifier.size(120.dp),
+                modifier = Modifier.size(126.dp),
                 alignment = Alignment.Center,
                 contentScale = ContentScale.Crop
             )
             Spacer(modifier = Modifier.width(12.dp))
-            Column(modifier = Modifier.weight(1f)) {
+            Column(modifier = Modifier.weight(1f).fillMaxHeight(),
+                verticalArrangement = Arrangement.spacedBy(5.dp)) {
                 Text(
                     text = dish.name,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    maxLines = 2,
+                    maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
-                Spacer(modifier = Modifier.height(4.dp))
+                Spacer(modifier = Modifier.height(0.5.dp))
                 Text(
                     text = dish.description,
                     style = MaterialTheme.typography.bodySmall,
@@ -60,7 +64,7 @@ fun DishCard(
                     overflow = TextOverflow.Ellipsis,
                     color = Color.Gray
                 )
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(modifier = Modifier.weight(1f))
                 Button(
                     modifier = Modifier.height(35.dp),
                     onClick = {onAdd()},

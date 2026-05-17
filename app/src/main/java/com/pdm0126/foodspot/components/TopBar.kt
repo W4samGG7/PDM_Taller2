@@ -53,7 +53,7 @@ fun TopBar(
                 Icon(
                     imageVector = Icons.Default.ArrowBackIosNew,
                     contentDescription = "Boton de volver",
-                    modifier = Modifier.size(35.dp).clickable(onClick = {onBack})
+                    modifier = Modifier.size(35.dp).clickable(onClick = {onBack()})
                 )
             }
             Text(
@@ -70,7 +70,7 @@ fun TopBar(
                 tint = colorResource(R.color.purple_search),
                 modifier = Modifier
                     .size(35.dp)
-                    .clickable(onClick = { onSearch })
+                    .clickable(onClick = { onSearch() })
 
             )
         }

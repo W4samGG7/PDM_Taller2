@@ -46,7 +46,7 @@ fun RestaurantCard(
                 maxLines = 3,
                 overflow = TextOverflow.Ellipsis,
                 textAlign = TextAlign.Center,
-                fontSize = 15.sp
+                fontSize = 12.sp
             )
         }
     }

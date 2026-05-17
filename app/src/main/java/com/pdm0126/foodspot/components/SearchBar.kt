@@ -26,7 +26,7 @@ fun SearchBar(
         value = searchQuery,
         onValueChange = onSearch,
         placeholder = {
-            Text(text = "Busca un nombre de restaurante o platillo.")
+            Text(text = "Restaurante o Platillo")
         },
         leadingIcon = {
             Icon(

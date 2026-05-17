@@ -7,4 +7,7 @@ sealed class Routes : NavKey {
 
     @Serializable
     data object RestaurantsList : Routes()
+
+    @Serializable
+    data object GeneralSearch: Routes()
 }

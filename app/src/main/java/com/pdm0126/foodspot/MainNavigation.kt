@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
+import com.pdm0126.foodspot.screens.GeneralSearch.GeneralSearchScreen
 import com.pdm0126.foodspot.screens.RestaurantList.RestaurantListScreen
 
 @Composable
@@ -16,8 +17,17 @@ fun FoodSpotApp(modifier: Modifier = Modifier){
         onBack = {backStack.removeLastOrNull()},
         entryProvider = entryProvider {
             entry<Routes.RestaurantsList>{
-                RestaurantListScreen(modifier
+                RestaurantListScreen(modifier,
+                    navigateToSearch = {
+                        backStack.add(Routes.GeneralSearch)
+                    }
                 )
+            }
+            entry<Routes.GeneralSearch>{
+                GeneralSearchScreen(modifier,
+                    navigateToRestaurantList = {
+                        backStack.removeLastOrNull()
+                    })
             }
         }
     )

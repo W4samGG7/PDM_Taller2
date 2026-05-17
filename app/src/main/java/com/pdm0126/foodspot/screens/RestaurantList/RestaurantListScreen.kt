@@ -17,7 +17,7 @@ import com.pdm0126.foodspot.components.CategoryRestaurantBox
 import com.pdm0126.foodspot.components.TopBar
 
 @Composable
-fun RestaurantListScreen(modifier: Modifier = Modifier,
+fun RestaurantListScreen(modifier: Modifier = Modifier, navigateToSearch:() -> Unit,
                          viewModel: RestaurantListViewModel = viewModel()
 ){
     val categories by viewModel.categories.collectAsState()
@@ -27,7 +27,7 @@ fun RestaurantListScreen(modifier: Modifier = Modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        TopBar(title = "FoodSpot", showSearch = true, onSearch = {}, showBack = false, onBack = {})
+        TopBar(title = "FoodSpot", showSearch = true, onSearch = {navigateToSearch()}, showBack = false, onBack = {})
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(15.dp),

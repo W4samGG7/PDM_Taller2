@@ -29,7 +29,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import com.pdm0126.foodspot.components.RestaurantCard
+import com.pdm0126.foodspot.components.SearchCard
 
 @Composable
 fun GeneralSearchScreen(
@@ -90,7 +90,7 @@ fun GeneralSearchScreen(
                 contentPadding = PaddingValues(20.dp)
             ) {
                 items(restaurantsSearched) { restaurantFounded ->
-                    RestaurantCard(
+                    SearchCard (
                         restaurant = restaurantFounded,
                         onClick = {navigateToDetail(restaurantFounded.id)}
                     )

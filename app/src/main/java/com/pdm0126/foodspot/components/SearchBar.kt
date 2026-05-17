@@ -2,6 +2,7 @@ package com.pdm0126.foodspot.components
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -22,7 +23,7 @@ fun SearchBar(
     onSearch: (String) -> Unit
 ){
     OutlinedTextField(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().padding(20.dp),
         value = searchQuery,
         onValueChange = onSearch,
         placeholder = {

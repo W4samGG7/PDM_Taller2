@@ -13,7 +13,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.pdm0126.foodspot.model.Restaurant
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.pdm0126.foodspot.R
 import com.pdm0126.foodspot.model.Dish
 
 @Composable
@@ -23,11 +26,14 @@ fun CategoryRestaurantBox(
     navigateToDetail:(Int) -> Unit
 ){
     Column(
-        modifier = Modifier.height(170.dp).fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            text = category
+            modifier = Modifier.padding(start = 20.dp),
+            text = category,
+            fontWeight = FontWeight.Bold,
+            color = colorResource(R.color.purple_search)
         )
         LazyRow(
             modifier = Modifier.fillMaxWidth(),

@@ -21,9 +21,16 @@ val sampleRestaurants = listOf(
                 name = "Pizza Pepperoni",
                 description = "Pepperoni con queso mozzarella derretido",
                 imageUrl = "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=1176"
+            ),
+            Dish(
+                id = 21,
+                name = "Pizza Hawaiana",
+                description = "Jamón, piña y extra queso mozzarella",
+                imageUrl = "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 2,
         name = "Burger House",
@@ -42,9 +49,16 @@ val sampleRestaurants = listOf(
                 name = "Bacon Cheese BBQ",
                 description = "Doble tocino crujiente, aros de cebolla y salsa BBQ",
                 imageUrl = "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=1171"
+            ),
+            Dish(
+                id = 22,
+                name = "Chicken Crispy Burger",
+                description = "Pollo crujiente, pepinillos y mayonesa especial",
+                imageUrl = "https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 3,
         name = "Trattoria Bella",
@@ -63,9 +77,16 @@ val sampleRestaurants = listOf(
                 name = "Lasagna de Carne",
                 description = "Capas de pasta rellenas de boloñesa casera y gratín de quesos",
                 imageUrl = "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=80&w=1074"
+            ),
+            Dish(
+                id = 23,
+                name = "Raviolis de Espinaca",
+                description = "Raviolis rellenos de ricotta y espinaca con salsa pomodoro",
+                imageUrl = "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 4,
         name = "Green & Fresh",
@@ -84,9 +105,16 @@ val sampleRestaurants = listOf(
                 name = "Wrap de Avocado & Pavo",
                 description = "Tortilla integral con aguacate, pechuga de pavo y espinaca",
                 imageUrl = "https://images.unsplash.com/photo-1626700051175-6518c4793f4f?q=80&w=1025"
+            ),
+            Dish(
+                id = 24,
+                name = "Bowl Mediterráneo",
+                description = "Garbanzos, quinoa, pepino, tomate y aderezo de yogur",
+                imageUrl = "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 5,
         name = "Taco Libre",
@@ -105,15 +133,22 @@ val sampleRestaurants = listOf(
                 name = "Quesadilla Gigante",
                 description = "Tortilla de harina con abundante queso fundido y carne asada",
                 imageUrl = "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=1194"
+            ),
+            Dish(
+                id = 25,
+                name = "Burrito Supremo",
+                description = "Frijoles, arroz mexicano, carne y guacamole fresco",
+                imageUrl = "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 6,
         name = "Sweet & Cake",
         description = "Postres reconfortantes, cafetería y pastelería fina",
         imageUrl = "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1089",
-        categories = listOf("Postres", "Italiana"), // Categoría en común (Postres de origen italiano etc.)
+        categories = listOf("Postres", "Italiana"),
         menu = listOf(
             Dish(
                 id = 11,
@@ -126,9 +161,16 @@ val sampleRestaurants = listOf(
                 name = "Cheesecake de Frutos Rojos",
                 description = "Base crujiente con crema de queso horneada y mermelada natural",
                 imageUrl = "https://images.unsplash.com/photo-1524351199679-46cddf530c04?q=80&w=1074"
+            ),
+            Dish(
+                id = 26,
+                name = "Cannoli Siciliano",
+                description = "Crujiente masa rellena de crema dulce con chispas de chocolate",
+                imageUrl = "https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 7,
         name = "The Grill Station",
@@ -147,9 +189,16 @@ val sampleRestaurants = listOf(
                 name = "Monster Burger",
                 description = "Triple carne, triple queso y aderezo especial de la parrilla",
                 imageUrl = "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=1160"
+            ),
+            Dish(
+                id = 27,
+                name = "Tomahawk Steak",
+                description = "Corte premium jugoso acompañado de vegetales asados",
+                imageUrl = "https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 8,
         name = "Pizzería Nápoles",
@@ -168,9 +217,16 @@ val sampleRestaurants = listOf(
                 name = "Pizza Fugazzeta",
                 description = "Abundante cebolla caramelizada, orégano y queso mozzarella",
                 imageUrl = "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=1160"
+            ),
+            Dish(
+                id = 28,
+                name = "Calzone Italiano",
+                description = "Pizza doblada rellena de jamón, ricotta y mozzarella",
+                imageUrl = "https://images.unsplash.com/photo-1511689660979-10d2b1aada49?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 9,
         name = "Veggie Delight",
@@ -189,9 +245,16 @@ val sampleRestaurants = listOf(
                 name = "Bowls de Quinua y Falafel",
                 description = "Base de quinua, vegetales asados, hummus y bolitas de falafel crujiente",
                 imageUrl = "https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1036"
+            ),
+            Dish(
+                id = 29,
+                name = "Tacos Veganos",
+                description = "Tortillas de maíz con proteína vegetal y salsa de aguacate",
+                imageUrl = "https://images.unsplash.com/photo-1513442542250-854d436a73f2?q=80&w=1170"
             )
         )
     ),
+
     Restaurant(
         id = 10,
         name = "Choco & Crunch",
@@ -210,6 +273,12 @@ val sampleRestaurants = listOf(
                 name = "Volcán de Chocolate",
                 description = "Bizcocho caliente con centro líquido acompañado de helado de crema",
                 imageUrl = "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1074"
+            ),
+            Dish(
+                id = 30,
+                name = "Milkshake Oreo",
+                description = "Batido cremoso con galleta Oreo y topping de crema batida",
+                imageUrl = "https://images.unsplash.com/photo-1577805947697-89e18249d767?q=80&w=1170"
             )
         )
     )

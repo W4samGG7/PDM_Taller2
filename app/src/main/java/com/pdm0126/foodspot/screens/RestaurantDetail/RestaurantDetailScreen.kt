@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,6 +24,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.pdm0126.foodspot.components.TopBar
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
+
 import androidx.compose.ui.platform.LocalContext
 import com.pdm0126.foodspot.components.DishCard
 
@@ -45,7 +47,7 @@ fun RestaurantDetailScreen(
 
     Column(
         modifier = modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
+        horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.Top
     ) {
         if(localRestaurant == null){
@@ -63,6 +65,7 @@ fun RestaurantDetailScreen(
                 onBack = { navigateToRestaurantList() }
             )
             Text(
+                modifier = Modifier.padding(start = 20.dp),
                 text = localRestaurant.description,
                 color = Color.Gray,
                 maxLines = 3,

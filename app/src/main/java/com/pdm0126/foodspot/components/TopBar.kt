@@ -39,6 +39,7 @@ fun TopBar(
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .padding(20.dp)
             .height(50.dp)
             .border(width = 3.dp, color = Color.Black, shape = RectangleShape)
             .padding(horizontal = 20.dp),

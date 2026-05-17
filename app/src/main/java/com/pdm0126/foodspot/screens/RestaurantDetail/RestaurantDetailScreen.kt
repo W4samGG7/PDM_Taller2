@@ -1,5 +1,6 @@
 package com.pdm0126.foodspot.screens.RestaurantDetail
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -22,6 +23,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.pdm0126.foodspot.components.TopBar
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.ui.platform.LocalContext
 import com.pdm0126.foodspot.components.DishCard
 
 @Composable
@@ -32,6 +34,8 @@ fun RestaurantDetailScreen(
     viewModel: RestaurantDetailViewModel = viewModel()
 ){
     val restaurant by viewModel.restaurant.collectAsState()
+
+    val context = LocalContext.current
 
     LaunchedEffect(restaurantId) {
         viewModel.loadRestaurantById(restaurantId)
@@ -74,7 +78,13 @@ fun RestaurantDetailScreen(
                 items(localRestaurant.menu) { dish ->
                     DishCard(
                         dish = dish,
-                        onAdd = {}
+                        onAdd = {
+                            Toast.makeText(
+                                context,
+                                "${dish.name} agregado al carrito",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     )
 
                 }

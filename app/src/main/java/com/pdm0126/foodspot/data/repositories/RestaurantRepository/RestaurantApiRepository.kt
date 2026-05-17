@@ -17,4 +17,8 @@ class RestaurantApiRepository: RestaurantRepository {
             category in it.categories
         }
     }
+
+    override suspend fun getRestaurantById(id: Int): Restaurant? {
+        return sampleRestaurants.find { it.id == id }
+    }
 }

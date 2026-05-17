@@ -37,12 +37,12 @@ fun GeneralSearchScreen(
     navigateToRestaurantList: () -> Unit,
     viewModel: GeneralSearchViewModel = viewModel()
 ) {
+    val searchValue by viewModel.searchValue.collectAsState()
+    val restaurantsSearched by viewModel.restaurantsSearched.collectAsState()
+
     LaunchedEffect(Unit) {
         viewModel.clearSearch()
     }
-
-    val searchValue by viewModel.searchValue.collectAsState()
-    val restaurantsSearched by viewModel.restaurantsSearched.collectAsState()
 
     Column(
         modifier = modifier.fillMaxSize(),

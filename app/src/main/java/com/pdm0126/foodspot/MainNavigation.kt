@@ -16,7 +16,7 @@ fun FoodSpotApp(modifier: Modifier = Modifier){
         onBack = {backStack.removeLastOrNull()},
         entryProvider = entryProvider {
             entry<Routes.RestaurantsList>{
-                RestaurantListScreen(
+                RestaurantListScreen(modifier
                 )
             }
         }

@@ -3,15 +3,21 @@ package com.pdm0126.foodspot.components
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.pdm0126.foodspot.model.Dish
 import com.pdm0126.foodspot.model.Restaurant
@@ -21,22 +27,26 @@ fun RestaurantCard(
     restaurant: Restaurant
 ){
     Card(
-        modifier = Modifier.clickable(onClick = {
-        })
+        modifier = Modifier.width(120.dp).height(160.dp).clickable(onClick = {
+        }),
+
     ) {
         Column(
-            modifier = Modifier.padding(20.dp),
-            verticalArrangement = Arrangement.SpaceBetween,
-            horizontalAlignment = Alignment.Start
+            modifier = Modifier.fillMaxSize().padding(10.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             AsyncImage(
-                modifier = Modifier.size(75.dp).padding(5.dp),
+                modifier = Modifier.size(90.dp),
                 alignment = Alignment.Center,
                 model = restaurant.imageUrl,
                 contentDescription = "Imagen del restaurante mostrado"
             )
             Text(
-                text = restaurant.name
+                text = restaurant.name,
+                maxLines = 3,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Center,
+                fontSize = 15.sp
             )
         }
     }

@@ -10,6 +10,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.pdm0126.foodspot.components.CategoryRestaurantBox
@@ -21,6 +22,12 @@ fun RestaurantListScreen(modifier: Modifier = Modifier,
 ){
     val categories by viewModel.categories.collectAsState()
     val restaurantsByCategory by viewModel.restaurantsByCategory.collectAsState()
+    Column(
+        modifier = modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        TopBar(title = "FoodSpot", showSearch = true, onSearch = {})
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(15.dp),
@@ -33,4 +40,5 @@ fun RestaurantListScreen(modifier: Modifier = Modifier,
                 )
             }
         }
+    }
 }

@@ -30,7 +30,7 @@ fun CategoryRestaurantBox(
         )
         LazyRow(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(15.dp)
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             items(filteredRestaurants){restaurant ->
                 RestaurantCard(restaurant = restaurant)
